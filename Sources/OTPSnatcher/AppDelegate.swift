@@ -31,6 +31,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let watchQueue = DispatchQueue(label: "com.pooya.otpsnatcher.watch", qos: .utility)
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // One unconditional launch marker, so `log show --predicate
+        // 'subsystem == "com.pooya.otpsnatcher"'` always shows whether the app
+        // started and which permission state it saw. Without it, the denied
+        // path is completely silent, which makes support impossible.
+        Log.event(.watcher, "launched")
         loadConfig(announce: false)
 
         gate = PermissionGate(store: store)
@@ -72,6 +77,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         )
 
         let permission = gate.check()
+        Log.state(.permission, "launch-check", permission.logName)
         menu = MenuBarController(
             state: viewState(permission: permission),
             actions: menuActions()
@@ -179,6 +185,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func recheckPermission() {
         let permission = gate.check()
+        Log.state(.permission, "recheck", permission.logName)
         menu.update { $0.permission = permission }
         guard permission == .granted else { return }
         // The grant may have arrived while we were in the background, so start

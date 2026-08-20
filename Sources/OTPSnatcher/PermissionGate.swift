@@ -16,6 +16,17 @@ final class PermissionGate {
         case denied
         case databaseMissing
         case failed
+
+        /// Case name for the log. Distinguishing these in the log is the whole
+        /// reason `MessageStore` bothers to keep its errors apart.
+        var logName: StaticString {
+            switch self {
+            case .granted: return "granted"
+            case .denied: return "denied"
+            case .databaseMissing: return "database-missing"
+            case .failed: return "failed"
+            }
+        }
     }
 
     /// The exact pane. Without the anchor, the user lands on the Privacy root

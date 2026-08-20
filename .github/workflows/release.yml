@@ -1,0 +1,152 @@
+# Tag-triggered release. Push a tag like v0.1.0 and this does the rest.
+#
+# Ported from osx-launchpad/.github/workflows/release.yml with two deliberate
+# differences:
+#
+#  1. The app is signed with a REAL certificate imported from a secret, not
+#     ad-hoc. TCC pins the Full Disk Access grant to the signature, so an
+#     ad-hoc release would force every user to re-grant FDA on every update.
+#     See docs/signing-and-tcc.md.
+#  2. No Sparkle, no appcast, no EdDSA signing. This app holds Full Disk Access
+#     over the entire message history and therefore contains no network code at
+#     all; "Check for Updates" opens the releases page in the browser. Adding an
+#     in-process updater here would violate the security rules in CLAUDE.md.
+#
+# Secrets required in this repo (Settings, Secrets, Actions):
+#   OTP_SIGN_P12_BASE64    base64 of the code-signing identity (.p12)
+#   OTP_SIGN_P12_PASSWORD  its export password
+#   RELEASE_REPO_TOKEN     PAT with Contents read/write on the release repo
+#
+# CONFIRM BEFORE FIRST USE: RELEASE_REPO below is a guess following the
+# LaunchpadX convention (private dev repo, separate public release repo). If this
+# stays a personal tool, delete this workflow and build releases locally with
+# scripts/build-signed-app.sh plus the dmgbuild command in
+# packaging/dmg/dmg-settings.json.
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+env:
+  APP_NAME: OTPSnatcher
+  RELEASE_REPO: sirpooya/OTPSnatcher
+
+jobs:
+  release:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Derive version from tag
+        id: ver
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Test and audit before shipping
+        run: |
+          set -euo pipefail
+          swift test
+          scripts/check-no-network.sh
+
+      - name: Import signing identity
+        env:
+          P12_BASE64: ${{ secrets.OTP_SIGN_P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.OTP_SIGN_P12_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${P12_BASE64:-}" ]]; then
+            echo "::error::OTP_SIGN_P12_BASE64 is not set. Releasing ad-hoc would break Full Disk Access for every user on every update."
+            exit 1
+          fi
+          KEYCHAIN="$RUNNER_TEMP/otpsnatcher.keychain-db"
+          KEYCHAIN_PASSWORD="$(uuidgen)"
+          printf '%s' "$P12_BASE64" | base64 --decode > "$RUNNER_TEMP/identity.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 900 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/identity.p12" -k "$KEYCHAIN" \
+            -P "$P12_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: \
+            -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" >/dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          rm -f "$RUNNER_TEMP/identity.p12"
+          echo "Identities available:"
+          security find-identity -v -p codesigning
+
+      - name: Build and sign
+        run: scripts/build-signed-app.sh
+
+      - name: Record the designated requirement
+        run: |
+          # Printed into the build log on purpose: if a future release changes
+          # this line, every user has to re-grant Full Disk Access, and this is
+          # the record that says when it happened.
+          codesign -d -r- "build/${APP_NAME}.app"
+
+      - name: Package the DMG
+        run: |
+          set -euxo pipefail
+          pipx install dmgbuild
+          APP_PATH="build/${APP_NAME}.app" \
+            dmgbuild -s packaging/dmg/dmgbuild-settings.py "OTP Snatcher" \
+            "build/${APP_NAME}-${{ steps.ver.outputs.version }}.dmg"
+
+      - name: Extract release notes from CHANGELOG
+        id: notes
+        run: |
+          set -euo pipefail
+          python3 - "${{ steps.ver.outputs.version }}" > release_notes.md <<'PY'
+          import sys
+          version = sys.argv[1]
+          lines = open("CHANGELOG.md", encoding="utf-8").read().splitlines()
+          start = None
+          for i, ln in enumerate(lines):
+              if ln.strip().startswith(f"## [{version}]"):
+                  start = i + 1
+                  break
+          out = []
+          if start is not None:
+              for ln in lines[start:]:
+                  s = ln.strip()
+                  if s.startswith("## ") or s.startswith("<!--"):
+                      break
+                  if not s:
+                      out.append("")
+                  elif ln.startswith(("-", "#")):
+                      out.append(s)
+                  elif out and out[-1]:
+                      out[-1] = out[-1] + " " + s
+                  else:
+                      out.append(s)
+          text = "\n".join(out).strip()
+          print(text or f"See the changelog for what changed in {version}.")
+          PY
+          cat release_notes.md
+
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_REPO_TOKEN }}
+        run: |
+          set -euxo pipefail
+          V="${{ steps.ver.outputs.version }}"
+          gh release create "${GITHUB_REF_NAME}" \
+            "build/${APP_NAME}-${V}.dmg" \
+            --repo "$RELEASE_REPO" \
+            --title "OTP Snatcher ${V}" \
+            --notes-file release_notes.md
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ env.APP_NAME }}-${{ steps.ver.outputs.version }}
+          path: build/*.dmg
+          if-no-files-found: ignore

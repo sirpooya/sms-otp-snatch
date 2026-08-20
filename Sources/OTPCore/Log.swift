@@ -51,6 +51,12 @@ public enum Log {
         match.log("verdict rowID=\(rowID, privacy: .public) matched=\(matched, privacy: .public) via=\(strategy, privacy: .public)")
     }
 
+    /// A permission state, by case name. Not free-form: the caller passes an
+    /// enum case name, which is why this takes a StaticString.
+    public static func state(_ area: Area, _ name: StaticString, _ value: StaticString) {
+        logger(for: area).log("\(name, privacy: .public)=\(value, privacy: .public)")
+    }
+
     /// An error, reported by its type only. Error descriptions can embed file
     /// paths but never message content; still, only the case name is logged.
     public static func failure(_ area: Area, _ name: StaticString, code: Int32 = 0) {
