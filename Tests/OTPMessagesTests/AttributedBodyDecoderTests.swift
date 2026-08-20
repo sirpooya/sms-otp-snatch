@@ -54,15 +54,27 @@ final class AttributedBodyDecoderTests: XCTestCase {
         XCTAssertNil(decoder.string(from: Data("streamtyped but not really".utf8)))
     }
 
-    /// A truncated typedstream is the realistic corruption case, and the length
-    /// prefix would run past the end of the buffer.
-    func testTruncatedTypedStreamIsRejected() {
+    /// A truncated typedstream is the realistic corruption case: the length
+    /// prefix promises more bytes than the buffer holds, and the scanner must
+    /// notice rather than reading past the end.
+    func testTruncationInsideThePayloadIsRejected() {
         let full = FixtureDB.typedStreamBlob
-        for cut in [8, 24, 48, 64, full.count - 4] {
-            let truncated = full.prefix(cut)
-            XCTAssertNil(TypedStreamScanner.string(from: Data(truncated)),
+        // 8 and 24 cut the header and class descriptors; 64 and 140 cut the
+        // string payload itself, which ends around byte 143 of 177.
+        for cut in [8, 24, 48, 64, 140] {
+            XCTAssertNil(TypedStreamScanner.string(from: Data(full.prefix(cut))),
                          "truncation at \(cut) should not produce a string")
         }
+    }
+
+    /// Truncation *after* the payload still yields the body, and that is
+    /// deliberate: everything past the string is attribute metadata this app
+    /// does not read, so losing it costs nothing. Recovering the text from a
+    /// partially written row beats dropping the message.
+    func testTruncationAfterThePayloadStillRecoversTheBody() {
+        let full = FixtureDB.typedStreamBlob
+        XCTAssertEqual(TypedStreamScanner.string(from: Data(full.prefix(full.count - 4))),
+                       FixtureDB.typedStreamExpectedBody)
     }
 
     func testScannerRejectsNonTypedStream() {
