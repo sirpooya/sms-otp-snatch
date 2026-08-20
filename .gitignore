@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode, if a project is ever added alongside the package
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+
+# Assembled app bundle and packaging output
+build/
+
+# Release artifacts (uploaded to GitHub Releases, never committed)
+*.dmg
+*.zip
+
+# Signing material must never be committed. The self-signed code-signing
+# identity is what keeps the Full Disk Access grant alive across rebuilds, so
+# leaking it is worse than losing it: anyone holding it can ship a build macOS
+# treats as this app.
+*.p12
+*.pem
+*.cer
+*.certSigningRequest
+*.p8
+*.mobileprovision
+signing_key*
+codesign_identity*
+
+# Anything harvested from a real chat.db while debugging. Message bodies and
+# codes must never end up in the repository.
+*.chat.db
+chat.db*
+harvest/
+samples-real/
