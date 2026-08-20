@@ -1,0 +1,1437 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.xctest/Contents/MacOS/OTPSnatcherPackageTests",
+      "packagePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch",
+      "productName" : "OTPSnatcherPackageTests"
+    }
+  ],
+  "copyCommands" : {
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher_OTPCoreTests.bundle/Fixtures" : {
+      "inputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/Fixtures"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher_OTPCoreTests.bundle/Fixtures"
+        }
+      ]
+    }
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.OTPCore-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/sources",
+      "importPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/CodeExtractor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Config.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/DigitNormalizer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Log.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/SenderRule.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "OTPCore",
+      "moduleOutputPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCore.swiftmodule",
+      "objects" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/CodeExtractor.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Config.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/DigitNormalizer.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Log.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/SenderRule.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/include/OTPCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sms_otp_snatch"
+      ],
+      "outputFileMapPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/CodeExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Config.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/DigitNormalizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Log.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/SenderRule.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/CodeExtractor.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Config.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/DigitNormalizer.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Log.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/SenderRule.swift"
+      ],
+      "tempsPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.OTPCoreTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/sources",
+      "importPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/CodeExtractorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/ConfigTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/DigitNormalizerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/SenderMatcherTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<OTPCoreTests-arm64-apple-macosx-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "OTPCoreTests",
+      "moduleOutputPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCoreTests.swiftmodule",
+      "objects" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+        "-module-cache-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sms_otp_snatch"
+      ],
+      "outputFileMapPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/CodeExtractorTests.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/ConfigTests.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/DigitNormalizerTests.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/SenderMatcherTests.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.OTPMessages-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/sources",
+      "importPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AppSupport.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AttributedBodyDecoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/ConfigStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/MessageStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/TypedStreamScanner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/WatermarkStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPTypedStream.build/OTPTypedStream.m.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "OTPMessages",
+      "moduleOutputPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPMessages.swiftmodule",
+      "objects" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPTypedStream.build/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPTypedStream/include",
+        "-module-cache-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/include/OTPMessages-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sms_otp_snatch"
+      ],
+      "outputFileMapPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPMessages.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AppSupport.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AttributedBodyDecoder.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/ConfigStore.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/MessageStore.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/TypedStreamScanner.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/WatermarkStore.swift"
+      ],
+      "tempsPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.OTPSnatcher-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/sources",
+      "importPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/App.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/ClipboardSink.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/DirectoryWatcher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/MenuBarController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/Notifier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/PermissionGate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/SnatcherEngine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPMessages.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "OTPSnatcher",
+      "moduleOutputPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPSnatcher.swiftmodule",
+      "objects" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/App.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/AppDelegate.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/ClipboardSink.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/DirectoryWatcher.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/MenuBarController.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/Notifier.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/PermissionGate.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/SnatcherEngine.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPTypedStream.build/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPTypedStream/include",
+        "-module-cache-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "OTPSnatcher_main",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sms_otp_snatch"
+      ],
+      "outputFileMapPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/App.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/ClipboardSink.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/DirectoryWatcher.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/MenuBarController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/Notifier.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/PermissionGate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/SnatcherEngine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPSnatcher.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/App.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/AppDelegate.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/ClipboardSink.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/DirectoryWatcher.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/MenuBarController.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/Notifier.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/PermissionGate.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/SnatcherEngine.swift"
+      ],
+      "tempsPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.OTPSnatcherPackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/sources",
+      "importPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "OTPSnatcherPackageTests",
+      "moduleOutputPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPSnatcherPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/include/OTPSnatcherPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sms_otp_snatch"
+      ],
+      "outputFileMapPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPSnatcherPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "OTPCore" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "OTPCore",
+      "-package-name",
+      "sms_otp_snatch",
+      "-c",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/CodeExtractor.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Config.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/DigitNormalizer.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Log.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/SenderRule.swift",
+      "-I",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/include/OTPCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sms_otp_snatch",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "OTPCoreTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "OTPCoreTests",
+      "-package-name",
+      "sms_otp_snatch",
+      "-c",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/CodeExtractorTests.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/ConfigTests.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/DigitNormalizerTests.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/SenderMatcherTests.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-module-cache-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sms_otp_snatch",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "OTPMessages" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "OTPMessages",
+      "-package-name",
+      "sms_otp_snatch",
+      "-c",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AppSupport.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AttributedBodyDecoder.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/ConfigStore.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/MessageStore.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/TypedStreamScanner.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/WatermarkStore.swift",
+      "-I",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPTypedStream.build/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPTypedStream/include",
+      "-module-cache-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/include/OTPMessages-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sms_otp_snatch",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "OTPSnatcher" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "OTPSnatcher",
+      "-package-name",
+      "sms_otp_snatch",
+      "-c",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/App.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/AppDelegate.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/ClipboardSink.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/DirectoryWatcher.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/MenuBarController.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/Notifier.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/PermissionGate.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/SnatcherEngine.swift",
+      "-I",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPTypedStream.build/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPTypedStream/include",
+      "-module-cache-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "OTPSnatcher_main",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sms_otp_snatch",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "OTPSnatcherPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "OTPSnatcherPackageTests",
+      "-package-name",
+      "sms_otp_snatch",
+      "-c",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/include/OTPSnatcherPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sms_otp_snatch",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "OTPCore" : [
+
+    ],
+    "OTPCoreTests" : [
+      "OTPCore"
+    ],
+    "OTPMessages" : [
+      "OTPTypedStream",
+      "OTPCore"
+    ],
+    "OTPSnatcher" : [
+      "OTPMessages",
+      "OTPTypedStream",
+      "OTPCore"
+    ],
+    "OTPSnatcherPackageTests" : [
+      "OTPCoreTests",
+      "OTPCore"
+    ],
+    "OTPTypedStream" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/CodeExtractor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Config.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/DigitNormalizer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/Log.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPCore/SenderRule.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/sources"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/CodeExtractorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/ConfigTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/DigitNormalizerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/SenderMatcherTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/sources"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AppSupport.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AttributedBodyDecoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/ConfigStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/MessageStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/TypedStreamScanner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/WatermarkStore.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/sources"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher-entitlement.plist"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/App.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/ClipboardSink.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/DirectoryWatcher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/MenuBarController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/Notifier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/PermissionGate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPSnatcher/SnatcherEngine.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/sources"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/CodeExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Config.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/DigitNormalizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Log.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/SenderRule.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/App.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/ClipboardSink.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/DirectoryWatcher.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/MenuBarController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/Notifier.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/PermissionGate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.build/SnatcherEngine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPTypedStream.build/OTPTypedStream.m.o"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcher.product/Objects.LinkFileList"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/sources"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/CodeExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Config.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/DigitNormalizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/Log.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/SenderRule.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.build/runner.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPSnatcherPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

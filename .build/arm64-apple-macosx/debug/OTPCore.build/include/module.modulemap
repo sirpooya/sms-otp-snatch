@@ -1,0 +1,3 @@
+module OTPCore {
+    header "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCore.build/include/OTPCore-Swift.h"
+}

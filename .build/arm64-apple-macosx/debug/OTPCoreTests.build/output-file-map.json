@@ -1,0 +1,40 @@
+{
+  "": {
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/primary.swiftdeps"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/CodeExtractorTests.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/CodeExtractorTests.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/ConfigTests.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/ConfigTests.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/DigitNormalizerTests.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DigitNormalizerTests.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPCoreTests/SenderMatcherTests.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/SenderMatcherTests.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPCoreTests.build/resource_bundle_accessor.dia"
+  }
+}

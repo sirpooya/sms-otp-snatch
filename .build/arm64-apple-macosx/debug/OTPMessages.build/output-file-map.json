@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/primary.swiftdeps"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AppSupport.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AppSupport.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/AttributedBodyDecoder.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/AttributedBodyDecoder.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/ConfigStore.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/ConfigStore.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/MessageStore.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/MessageStore.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/TypedStreamScanner.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/TypedStreamScanner.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPMessages/WatermarkStore.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessages.build/WatermarkStore.dia"
+  }
+}

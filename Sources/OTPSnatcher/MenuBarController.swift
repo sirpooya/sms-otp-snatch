@@ -31,6 +31,7 @@ final class MenuBarController {
     private let statusItem: NSStatusItem
     private let actions: Actions
     private var state: ViewState
+    private var menuTarget: AnyObject?
 
     private let timeFormatter: DateFormatter = {
         let f = DateFormatter()
@@ -138,14 +139,13 @@ final class MenuBarController {
         menu.addItem(item("Check for Updates...", #selector(Target.checkUpdates)))
         menu.addItem(item("Quit OTP Snatcher", #selector(Target.quit), key: "q"))
 
-        // One target object retained by the menu, so the closures survive as
-        // long as the menu does.
+        // NSMenuItem holds its target weakly, so the controller owns it.
         let target = Target(actions: actions, state: state)
-        for entry in menu.items where entry.action != nil {
-            entry.target = target
+        menuTarget = target
+        for entry in menu.items {
+            if entry.action != nil { entry.target = target }
+            entry.submenu?.items.forEach { $0.target = target }
         }
-        menu.items.forEach { $0.submenu?.items.forEach { $0.target = target } }
-        objc_setAssociatedObject(menu, Unmanaged.passUnretained(Target.associationKey).toOpaque(), target, .OBJC_ASSOCIATION_RETAIN)
 
         statusItem.menu = menu
     }
@@ -177,8 +177,6 @@ final class MenuBarController {
     /// making the controller itself an NSObject subclass.
     @MainActor
     private final class Target: NSObject {
-        static let associationKey = NSObject()
-
         private let actions: Actions
         private let state: ViewState
 

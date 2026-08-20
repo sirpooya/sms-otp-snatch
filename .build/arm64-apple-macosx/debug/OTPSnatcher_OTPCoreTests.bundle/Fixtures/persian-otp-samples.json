@@ -1,0 +1,208 @@
+{
+  "$comment": "Anonymized Persian/Iranian OTP and non-OTP SMS bodies, modelled on real message shapes harvested from a live chat.db. Every digit is synthetic: no real code, phone number or account number appears here. 'expected': null means the extractor must find nothing.",
+  "cases": [
+    {
+      "name": "saman-purchase",
+      "sender": "+989999920000",
+      "body": "بانک سامان\nخريد\nاسنپ فود\nمبلغ 12,500,000 ريال\nرمز 483920\nزمان اعتبار رمز 00:04:59",
+      "expected": "483920",
+      "strategy": "keywordAnchored",
+      "note": "Arabic yeh in خريد/ريال, an amount above the code and a validity clock below it."
+    },
+    {
+      "name": "mellat-pooya",
+      "sender": "Bank Mellat",
+      "body": "محرمانه!\nخرید از\nتپسی\nمبلغ 1,850,000\nرمز پویا 71482",
+      "expected": "71482",
+      "strategy": "keywordAnchored"
+    },
+    {
+      "name": "blu-pooya",
+      "sender": "+989999987641",
+      "body": "بلو\nبفرمایید رمز پویا\nخرید\nسیزپی\nمبلغ: 24,900,000 ریال\nرمز: 903117  \n05:00",
+      "expected": "903117",
+      "strategy": "keywordAnchored",
+      "note": "Trailing bare clock 05:00 must not win."
+    },
+    {
+      "name": "parsian-one-time",
+      "sender": "PARSIANBANK",
+      "body": "رمز یکبار مصرف 662940\nمهلت استفاده 2 دقیقه",
+      "expected": "662940",
+      "strategy": "keywordAnchored"
+    },
+    {
+      "name": "amount-without-separators",
+      "sender": "+989999920000",
+      "body": "بانک سامان\nمبلغ 500000 ریال\nرمز 314159",
+      "expected": "314159",
+      "strategy": "keywordAnchored",
+      "note": "An unseparated amount is only distinguishable by its trailing unit."
+    },
+    {
+      "name": "digikala-domain-bound",
+      "sender": "DIGIKALA",
+      "body": "دیجی‌کالا\nکد تایید: 74129\nکد محرمانه است.\n\n@auth.digikala.com #74129",
+      "expected": "74129",
+      "strategy": "domainBound"
+    },
+    {
+      "name": "snapp-market-domain-bound",
+      "sender": "982000300300303",
+      "body": "کد ورود شما : 550913\nاسنپ مارکت اکسپرس\n@express.snapp.market #550913",
+      "expected": "550913",
+      "strategy": "domainBound"
+    },
+    {
+      "name": "homeca-domain-bound",
+      "sender": "982000011022013",
+      "body": "کد ورود شما به هومکا:\nCode: 41398\n\n@www.homeca.ir #41398\nلغو 11",
+      "expected": "41398",
+      "strategy": "domainBound"
+    },
+    {
+      "name": "snapp-taxi-domain-bound",
+      "sender": "+985000390",
+      "body": "Code: 219476\nکد ورود اسنپ\nبرای دیگران نفرستید\n\n@app.snapp.taxi #219476",
+      "expected": "219476",
+      "strategy": "domainBound"
+    },
+    {
+      "name": "wallgold-domain-bound",
+      "sender": "+9810002061",
+      "body": "کاربر گرامی وال گلد؛ کد تایید شما: 806413\ncode: 806413\n@wallgold #806413\nلغو11",
+      "expected": "806413",
+      "strategy": "domainBound",
+      "note": "Domain token without a dot; the hash token still identifies the code."
+    },
+    {
+      "name": "google-trailing-keyword",
+      "sender": "Google",
+      "body": "G-338291 is your Google verification code. Don't share your code with anyone.",
+      "expected": "338291",
+      "strategy": "standalone",
+      "note": "Keyword follows the code, so nothing anchors it; the fallback has to be right."
+    },
+    {
+      "name": "hamrahe-man-code-colon",
+      "sender": "Hamrahe Man",
+      "body": "Code: 51294\nکد یکبار مصرف همراه‌من\n1tfvy8PD3wO",
+      "expected": "51294",
+      "strategy": "keywordAnchored",
+      "note": "The trailing app-hash token must not be mistaken for a code."
+    },
+    {
+      "name": "four-digit-code",
+      "sender": "+989820002022",
+      "body": "کد تایید شما : \n8146 \nکیو آر با ما\nلغو11",
+      "expected": "8146",
+      "strategy": "keywordAnchored"
+    },
+    {
+      "name": "persian-digits",
+      "sender": "+989999920000",
+      "body": "بانک سامان\nمبلغ ۱۲,۵۰۰,۰۰۰ ريال\nرمز ۴۸۳۹۲۰",
+      "expected": "483920",
+      "strategy": "keywordAnchored"
+    },
+    {
+      "name": "arabic-indic-digits",
+      "sender": "PARSIANBANK",
+      "body": "رمز یکبار مصرف ٦٦٢٩٤٠",
+      "expected": "662940",
+      "strategy": "keywordAnchored"
+    },
+    {
+      "name": "zwnj-inside-number",
+      "sender": "DIGIKALA",
+      "body": "کد تایید: ۱۲۳‌۴۵۶",
+      "expected": "123456",
+      "strategy": "keywordAnchored",
+      "note": "A ZWNJ sitting mid-number splits the run unless it is stripped first."
+    },
+    {
+      "name": "bidi-wrapped-code",
+      "sender": "DIGIKALA",
+      "body": "‏کد تایید: ‫739104‬",
+      "expected": "739104",
+      "strategy": "keywordAnchored"
+    },
+    {
+      "name": "reject-hamrahaval-promo",
+      "sender": "HAMRAHAVAL",
+      "body": "ارزانتر مکالمه کن\nخرید بسته 500 دقیقه مکالمه درون شبکه تنها با قیمت 250000 ریال\nفعال‌سازی از طریق\nشماره‌گیری کد دستوری زیر\n*100*4#\nدریافت اطلاعات بیشتر: https://zbl.io/MCIz3HMOc7Y",
+      "expected": null,
+      "strategy": null,
+      "note": "USSD string, a price, and a shortlink with digits in the slug."
+    },
+    {
+      "name": "reject-mci-package",
+      "sender": "MCI Package",
+      "body": "200 گیگ اینترنت هدیه شبانه 30 روزه\nبا خرید هر یک از بسته‌های اینترنت بلندمدت\n1- بسته 40گیگابایت 90 روزه\n2- بسته 120 گیگابایت 180 روزه\nشماره گیری کد دستوری\n*100*23",
+      "expected": null,
+      "strategy": null
+    },
+    {
+      "name": "reject-snapp-discount",
+      "sender": "Snapp",
+      "body": "پویا جان هیچ‌جا نرو!\nخریدهای سوپرمارکتی رو آنلاین سفارش بده.\nکد تخفیف 150 هزار تومنی خرید اول:\n47CJKLV8P\nاعتبار تا 3 شهریور\nl.snpp.link/EAT4C29",
+      "expected": null,
+      "strategy": null,
+      "note": "A discount code cue plus an alphanumeric coupon."
+    },
+    {
+      "name": "reject-acharyaneh-promo",
+      "sender": "+9810005505000550",
+      "body": "پویا عزیز\nنظافت و تعمیرات رو با تخفیف انجام بده!\nکد 30 درصدی: A4RT219384756\nسقف تخفیف: 90،000 تومان\nلینک: http://a2re.ir/8ab\nپشتیبانی: 9214",
+      "expected": null,
+      "strategy": null,
+      "note": "The support line number is exactly code-shaped; only its cue distinguishes it."
+    },
+    {
+      "name": "reject-irancell-debt",
+      "sender": "SoratHesab",
+      "body": "ایرانسلی عزیز به شماره 0901234567\nبدهی پیشین خط شما 48500 ریال است.\nروش های پرداخت:\nبرنامه ایرانسل من: http://i9l.ir/M2S8A\nشماره گیری کد 1*10*\nتماس با سامانه جامع پرداخت به شماره 7000 (02191070000 از سایر خطوط)",
+      "expected": null,
+      "strategy": null
+    },
+    {
+      "name": "reject-snappfood-delivery",
+      "sender": "SNAPPFOOD",
+      "body": "پویا عزیز\nدرخواست شما پیگیری شد. از تاخیر پیش آمده، متاسفیم.\nسفارش شما تا 25 دقیقه دیگر تحویل میگردد.\nپیگیری سفارش: http://snpfd.link/4fcf29a1bc7f",
+      "expected": null,
+      "strategy": null
+    },
+    {
+      "name": "reject-relationship-manager",
+      "sender": "+989999300612",
+      "body": "سلام مشتری ویژه گرامی،\nدر صورت تمایل به منظور فعالسازی خدمات غیرحضوری به شعبه مراجعه فرمایید.\nدر صورت نیاز به کسب اطلاعات بیشتر، لطفاً با شماره زیر تماس حاصل فرمایید 02144665577",
+      "expected": null,
+      "strategy": null,
+      "note": "An 11-digit phone number is out of range, but only just."
+    },
+    {
+      "name": "reject-amount-only",
+      "sender": "+98700749225",
+      "body": "24,500,000 ریال دیجی پی\nبا کد DEMODE در بانی مد\nbnmod.ir/Hrn\nلغو11",
+      "expected": null,
+      "strategy": null
+    },
+    {
+      "name": "sender-pattern-wins",
+      "sender": "+989999920000",
+      "pattern": "رمز\\s+(\\d{6})",
+      "body": "بانک سامان\nمبلغ 12,500,000 ريال\nرمز 483920\nزمان اعتبار رمز 00:04:59",
+      "expected": "483920",
+      "strategy": "senderPattern"
+    },
+    {
+      "name": "sender-pattern-authoritative-when-absent",
+      "sender": "DIGIKALA",
+      "pattern": "^OTP:(\\d{6})$",
+      "body": "کد تایید: 74129",
+      "expected": null,
+      "strategy": null,
+      "note": "A configured pattern is a promise: when it fails we return nothing rather than guessing."
+    }
+  ]
+}

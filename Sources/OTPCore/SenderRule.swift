@@ -44,9 +44,7 @@ public enum SenderMatcher {
     public static func canonical(_ handleID: String) -> String {
         var s = handleID.trimmingCharacters(in: .whitespacesAndNewlines)
         // Strip one or more trailing "(filtered)" / "(Filtered)" markers.
-        while true {
-            let lower = s.lowercased()
-            guard lower.hasSuffix("(filtered)") else { break }
+        while s.lowercased().hasSuffix("(filtered)") {
             s = String(s.dropLast("(filtered)".count)).trimmingCharacters(in: .whitespaces)
         }
         return s
@@ -57,40 +55,42 @@ public enum SenderMatcher {
         let rule = canonical(ruleID)
         if handle.isEmpty || rule.isEmpty { return false }
 
-        // Alphanumeric senders: case-insensitive, whitespace-insensitive
-        // ("bank mellat" vs "BANKMELLAT").
-        let hFold = fold(handle)
-        let rFold = fold(rule)
-        if hFold == rFold { return true }
+        // Alphanumeric senders: case-insensitive and whitespace-insensitive,
+        // so "bank mellat" and "BANKMELLAT" are the same sender.
+        if fold(handle) == fold(rule) { return true }
 
-        // Numeric senders: compare digit tails so country-code and trunk-zero
-        // variants of the same line match. Both sides must be *purely* numeric
-        // for this, otherwise "DIGIKALA" and a shortcode could suffix-match on
-        // stray digits.
+        // Numeric senders: compare digit tails, so the country-code and
+        // trunk-zero spellings of one line match. Both sides must be purely
+        // numeric, otherwise an alphanumeric sender id could suffix-match a
+        // shortcode on stray digits.
         guard isNumeric(handle), isNumeric(rule) else { return false }
-        let hDigits = digitsOnly(handle)
-        let rDigits = digitsOnly(rule)
-        if hDigits == rDigits { return !hDigits.isEmpty }
+        let handleDigits = digitsOnly(handle)
+        let ruleDigits = digitsOnly(rule)
+        if handleDigits.isEmpty || ruleDigits.isEmpty { return false }
+        if handleDigits == ruleDigits { return true }
 
-        let (shorter, longer) = hDigits.count <= rDigits.count ? (hDigits, rDigits) : (rDigits, hDigits)
-        // 4 digits is the shortest shortcode worth suffix-matching; below that
-        // the false-positive risk outweighs the convenience.
+        let (shorter, longer) = handleDigits.count <= ruleDigits.count
+            ? (handleDigits, ruleDigits)
+            : (ruleDigits, handleDigits)
+        // Four digits is the shortest shortcode worth suffix-matching. Below
+        // that the false-positive risk outweighs the convenience.
         guard shorter.count >= 4 else { return false }
         return longer.hasSuffix(shorter)
     }
 
     /// True when the sender is a phone number or shortcode rather than an
-    /// alphanumeric sender id. Punctuation that carriers sprinkle into numbers
-    /// (`+`, spaces, dashes, parens) is tolerated.
+    /// alphanumeric sender id. Punctuation carriers sprinkle into numbers
+    /// (`+`, spaces, dashes, parentheses) is tolerated.
     private static func isNumeric(_ s: String) -> Bool {
-        let normalized = DigitNormalizer.normalize(s)
         var sawDigit = false
-        for ch in normalized {
+        for ch in DigitNormalizer.normalize(s) {
             if ch.isASCII && ch.isNumber { sawDigit = true; continue }
             if "+-() ".contains(ch) { continue }
             return false
         }
         return sawDigit
+    }
+
     private static func fold(_ s: String) -> String {
         s.lowercased().filter { !$0.isWhitespace }
     }
