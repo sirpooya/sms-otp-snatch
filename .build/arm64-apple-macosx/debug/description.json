@@ -473,6 +473,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/WALFallbackTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
         },
         {
@@ -493,7 +497,8 @@
       "moduleOutputPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPMessagesTests.swiftmodule",
       "objects" : [
         "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/FixtureDB.swift.o",
-        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.swift.o"
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.swift.o",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/WALFallbackTests.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -561,13 +566,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/WALFallbackTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules/OTPMessagesTests.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/FixtureDB.swift",
-        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/MessageStoreTests.swift"
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/MessageStoreTests.swift",
+        "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/WALFallbackTests.swift"
       ],
       "tempsPath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build",
       "wholeModuleOptimization" : false
@@ -1064,6 +1074,7 @@
       "-c",
       "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/FixtureDB.swift",
       "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/MessageStoreTests.swift",
+      "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/WALFallbackTests.swift",
       "-I",
       "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -1423,6 +1434,10 @@
         {
           "kind" : "file",
           "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/MessageStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/WALFallbackTests.swift"
         }
       ],
       "outputFilePath" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/sources"
@@ -1665,6 +1680,10 @@
         {
           "kind" : "file",
           "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/WALFallbackTests.swift.o"
         },
         {
           "kind" : "file",

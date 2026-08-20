@@ -149,6 +149,71 @@ struct FixtureDB {
     }
 
     enum FixtureError: Error { case cannotCreate }
+
+    // MARK: - WAL scenario
+
+    /// Builds the exact situation that makes a read-only WAL open fail:
+    ///
+    /// - a WAL database whose rows live **only** in the `-wal` file, because
+    ///   auto-checkpointing is off and the copy is taken while the writer still
+    ///   holds the database open;
+    /// - no `-shm` file, so a reader has to create one;
+    /// - a directory with no write permission, so it cannot.
+    ///
+    /// SQLite answers that with SQLITE_READONLY_RECOVERY or SQLITE_CANTOPEN,
+    /// which is precisely the case the snapshot fallback exists for. It also
+    /// makes the result meaningful: if rows come back at all, the `-wal` was
+    /// read, which is the reason `immutable=1` is banned.
+    static func makeWALOnlyDatabase(body: String, handle: String) throws -> (directory: URL, database: URL) {
+        let fm = FileManager.default
+        let source = fm.temporaryDirectory
+            .appendingPathComponent("otpsnatcher-wal-src-\(UUID().uuidString)", isDirectory: true)
+        let target = fm.temporaryDirectory
+            .appendingPathComponent("otpsnatcher-wal-ro-\(UUID().uuidString)", isDirectory: true)
+        try fm.createDirectory(at: source, withIntermediateDirectories: true)
+        try fm.createDirectory(at: target, withIntermediateDirectories: true)
+
+        let sourceDB = source.appendingPathComponent("chat.db")
+
+        var db: OpaquePointer?
+        guard sqlite3_open_v2(sourceDB.path, &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, nil) == SQLITE_OK,
+              let db else { throw FixtureError.cannotCreate }
+
+        try exec(db, "PRAGMA journal_mode=WAL;")
+        try exec(db, "PRAGMA wal_autocheckpoint=0;")
+        try exec(db, """
+            CREATE TABLE handle (ROWID INTEGER PRIMARY KEY AUTOINCREMENT, id TEXT, service TEXT);
+            CREATE TABLE message (
+                ROWID INTEGER PRIMARY KEY AUTOINCREMENT,
+                text TEXT,
+                attributedBody BLOB,
+                handle_id INTEGER,
+                service TEXT,
+                date INTEGER,
+                is_from_me INTEGER DEFAULT 0
+            );
+            """)
+        try insertHandle(db, handle)
+        let handleRowID = sqlite3_last_insert_rowid(db)
+        try insertMessage(db, Row(text: body, handle: handle), handleRowID: handleRowID)
+
+        // Copy while the writer is still open, so the -wal is not checkpointed
+        // away by sqlite3_close.
+        let targetDB = target.appendingPathComponent("chat.db")
+        for suffix in ["", "-wal"] {
+            let from = URL(fileURLWithPath: sourceDB.path + suffix)
+            guard fm.fileExists(atPath: from.path) else { continue }
+            try fm.copyItem(at: from, to: URL(fileURLWithPath: targetDB.path + suffix))
+        }
+        sqlite3_close(db)
+        try? fm.removeItem(at: source)
+
+        // No -shm in the copy, and no way to create one.
+        try? fm.removeItem(at: URL(fileURLWithPath: targetDB.path + "-shm"))
+        try fm.setAttributes([.posixPermissions: 0o500], ofItemAtPath: target.path)
+
+        return (target, targetDB)
+    }
 }
 
 // SQLITE_TRANSIENT is a macro that does not survive into Swift.
