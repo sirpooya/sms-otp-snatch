@@ -43,7 +43,7 @@ let package = Package(
         ),
         .testTarget(
             name: "OTPMessagesTests",
-            dependencies: ["OTPMessages"],
+            dependencies: ["OTPMessages", "OTPTypedStream"],
             swiftSettings: [.swiftLanguageMode(.v5)],
             linkerSettings: [.linkedLibrary("sqlite3")]
         ),

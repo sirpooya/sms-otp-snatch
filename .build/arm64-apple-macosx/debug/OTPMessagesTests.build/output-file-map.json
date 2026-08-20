@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/primary.swiftdeps"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/FixtureDB.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/FixtureDB.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/FixtureDB.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/FixtureDB~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/FixtureDB.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/FixtureDB.dia"
+  },
+  "/Users/pooya/Documents/GitHub/sms-otp-snatch/Tests/OTPMessagesTests/MessageStoreTests.swift": {
+    "dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.d",
+    "object": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.swift.o",
+    "swiftmodule": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.swiftdeps",
+    "diagnostics": "/Users/pooya/Documents/GitHub/sms-otp-snatch/.build/arm64-apple-macosx/debug/OTPMessagesTests.build/MessageStoreTests.dia"
+  }
+}

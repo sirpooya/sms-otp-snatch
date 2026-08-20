@@ -54,6 +54,11 @@ public final class MessageStore {
     private let databaseURL: URL
     private let decoder: AttributedBodyDecoding
 
+    /// Whether the most recent read had to go through a private snapshot rather
+    /// than reading the live database. Diagnostic only, but it is the one bit of
+    /// state that tells a WAL problem apart from a healthy read.
+    public private(set) var lastReadUsedSnapshot = false
+
     public init(databaseURL: URL = MessageStore.defaultDatabaseURL,
                 decoder: AttributedBodyDecoding = AttributedBodyDecoder()) {
         self.databaseURL = databaseURL
@@ -178,7 +183,9 @@ public final class MessageStore {
         if let db = try? open(databaseURL) {
             defer { sqlite3_close(db) }
             do {
-                return try body(db)
+                let result = try body(db)
+                lastReadUsedSnapshot = false
+                return result
             } catch MessageStoreError.sqlite(let code) where Self.needsSnapshot(code) {
                 Log.failure(.store, "wal-read-failed-falling-back", code: code)
             }
@@ -189,7 +196,9 @@ public final class MessageStore {
         return try withSnapshot { url in
             let db = try open(url)
             defer { sqlite3_close(db) }
-            return try body(db)
+            let result = try body(db)
+            lastReadUsedSnapshot = true
+            return result
         }
     }
 
