@@ -19,6 +19,12 @@ final class LiveDatabaseIntegrationTests: XCTestCase {
         } catch MessageStoreError.databaseNotFound {
             throw XCTSkip("no Messages database on this machine")
         }
+        // A CI runner ships an empty chat.db: the file and its schema exist, so
+        // the probe succeeds, but there is not a single row to measure. That is
+        // "nothing to test here", not a failure.
+        if try store.maxRowID() == 0 {
+            throw XCTSkip("Messages database is empty")
+        }
         return store
     }
 
@@ -26,6 +32,8 @@ final class LiveDatabaseIntegrationTests: XCTestCase {
         let store = try liveStore()
         let head = try store.maxRowID()
         XCTAssertGreaterThan(head, 0, "a live database should have messages")
+        XCTAssertFalse(try store.fetchNew(sinceRowID: max(0, head - 200)).isEmpty,
+                       "the head of a live database should yield readable rows")
     }
 
     /// A healthy live database should be readable directly. If this starts

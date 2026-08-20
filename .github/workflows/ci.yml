@@ -25,8 +25,9 @@ jobs:
       - name: Build
         run: swift build
 
-      # The runner has no chat.db and no TCC grant. Every test that would need
-      # either skips itself, so this must stay green on a bare machine.
+      # The runner has no TCC grant, and its chat.db (the image ships an empty
+      # one) has no rows. Every test that needs either skips itself, so this
+      # must stay green on a bare machine.
       - name: Test
         run: swift test
 
