@@ -92,6 +92,11 @@ public enum CodeExtractor {
     /// How far ahead a trailing unit may sit and still disqualify a run.
     private static let unitWindow = 8
 
+    /// How close a negative cue must be to override a code cue further back.
+    /// Wide enough for a colon and a space, narrow enough that a negative word
+    /// in a subordinate clause does not veto a genuine code.
+    private static let adjacentVetoWindow = 4
+
     // MARK: - Entry point
 
     public static func extract(from rawBody: String, rule: SenderRule? = nil) -> ExtractionResult? {
@@ -128,19 +133,12 @@ public enum CodeExtractor {
 
         let cueList = cues(in: chars, extraPositive: rule?.keywords ?? [])
 
-        // 3. Keyword anchoring: the nearest cue *before* the run decides. A
-        //    negative cue vetoes the run outright, which is how the amount in a
-        //    bank OTP gets dropped while the code two lines later survives.
+        // 3. Keyword anchoring. See `verdict(for:)` for the precedence rules.
         var anchored: [(run: DigitRun, gap: Int)] = []
         for run in runs {
-            guard let cue = nearestPrecedingCue(cueList, before: run.range.lowerBound) else { continue }
-            let gap = run.range.lowerBound - cue.range.upperBound
-            guard gap <= cueWindow else { continue }
-            if cue.positive {
+            if case .anchored(let gap) = verdict(for: run, cues: cueList) {
                 anchored.append((run, gap))
             }
-            // A negative nearest-cue means this run is vetoed: it is not added
-            // here, and `vetoed` below keeps it out of the fallback too.
         }
         if let best = anchored.min(by: { lhs, rhs in
             if lhs.gap != rhs.gap { return lhs.gap < rhs.gap }
@@ -153,12 +151,7 @@ public enum CodeExtractor {
         //    code-shaped run that no negative cue vetoed. This is what catches
         //    "G-123456 is your Google verification code", where the keyword
         //    trails the code instead of leading it.
-        let survivors = runs.filter { run in
-            guard let cue = nearestPrecedingCue(cueList, before: run.range.lowerBound) else { return true }
-            let gap = run.range.lowerBound - cue.range.upperBound
-            guard gap <= cueWindow else { return true }
-            return cue.positive
-        }
+        let survivors = runs.filter { verdict(for: $0, cues: cueList) != .vetoed }
         guard let best = survivors.min(by: { lhs, rhs in
             let l = lengthRank(lhs), r = lengthRank(rhs)
             if l != r { return l < r }
@@ -231,11 +224,19 @@ public enum CodeExtractor {
 
         // Part of a longer alphanumeric token: a promo code like "A1RT12345678"
         // or a shortlink slug like "EAT1C22".
-        if let b = before, b.isLetter { return false }
-        if let a = after, a.isLetter { return false }
+        //
+        // Only *Latin* letters disqualify. Persian senders routinely run text
+        // straight into a number with no space ("کد تایید شما : 123456سامانه"),
+        // and Persian script does not form alphanumeric coupon codes, so a
+        // Persian letter touching a digit run is just missing whitespace.
+        if let b = before, b.isLetter, b.isASCII { return false }
+        if let a = after, a.isLetter, a.isASCII { return false }
 
-        // A time such as "12:34:56", or a clock validity window.
-        if before == ":" || after == ":" { return false }
+        // A time such as "12:34:56". The colon only disqualifies when a digit
+        // sits on its far side; a colon introducing the code is the single most
+        // common OTP format there is ("کد تایید:123456", "Code:41398").
+        if isTimeSeparator(before, neighbor: run.range.lowerBound >= 2 ? chars[run.range.lowerBound - 2] : nil) { return false }
+        if isTimeSeparator(after, neighbor: run.range.upperBound + 1 < chars.count ? chars[run.range.upperBound + 1] : nil) { return false }
 
         // A USSD string such as "*140*11" or "#123*".
         if before == "*" || after == "*" { return false }
@@ -256,6 +257,12 @@ public enum CodeExtractor {
         if hasTrailingUnit(after: run.range.upperBound, chars: chars) { return false }
 
         return true
+    }
+
+    private static func isTimeSeparator(_ ch: Character?, neighbor: Character?) -> Bool {
+        guard let ch, ch == ":" else { return false }
+        guard let neighbor else { return false }
+        return isASCIIDigit(neighbor)
     }
 
     private static func isGroupingSeparator(_ ch: Character?, neighbor: Character?) -> Bool {
@@ -314,12 +321,55 @@ public enum CodeExtractor {
         return found
     }
 
-    private static func nearestPrecedingCue(_ cues: [Cue], before index: Int) -> Cue? {
+    private static func nearestPrecedingCue(_ cues: [Cue], before index: Int, positive: Bool? = nil) -> Cue? {
         var best: Cue? = nil
         for cue in cues where cue.range.upperBound <= index {
+            if let positive, cue.positive != positive { continue }
             if best == nil || cue.range.upperBound > best!.range.upperBound { best = cue }
         }
         return best
+    }
+
+    private enum Verdict: Equatable {
+        /// A code cue governs this run; the payload is the gap in characters.
+        case anchored(Int)
+        /// A cue proves this run is not a code.
+        case vetoed
+        /// No cue in range either way.
+        case unanchored
+    }
+
+    /// Decides what the surrounding words say about one digit run.
+    ///
+    /// Precedence, in this order, each rule earning its place from a real
+    /// message shape:
+    ///
+    /// 1. A negative cue *immediately* before the run vetoes it. "پشتیبانی: 9214"
+    ///    (a support line number) and "مبلغ 500000" are the same grammar as
+    ///    "رمز 483920", and only the label distinguishes them.
+    /// 2. Otherwise any code cue within the window anchors it, even if a
+    ///    negative word sits in between. "کد تایید حساب کاربری شما 1234" is a
+    ///    real code: "حساب" is describing the account, not labelling the number.
+    /// 3. Otherwise a negative cue anywhere in the window vetoes it.
+    /// 4. Otherwise nothing is claimed and the fallback may take it.
+    private static func verdict(for run: DigitRun, cues: [Cue]) -> Verdict {
+        let start = run.range.lowerBound
+
+        if let nearest = nearestPrecedingCue(cues, before: start),
+           !nearest.positive,
+           start - nearest.range.upperBound <= adjacentVetoWindow {
+            return .vetoed
+        }
+        if let positive = nearestPrecedingCue(cues, before: start, positive: true),
+           start - positive.range.upperBound <= cueWindow {
+            return .anchored(start - positive.range.upperBound)
+        }
+        if let nearest = nearestPrecedingCue(cues, before: start),
+           !nearest.positive,
+           start - nearest.range.upperBound <= cueWindow {
+            return .vetoed
+        }
+        return .unanchored
     }
 
     // MARK: - Tokens and URLs
