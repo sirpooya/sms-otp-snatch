@@ -1,4 +1,0 @@
-module OTPTypedStream {
-    umbrella header "/Users/pooya/Documents/GitHub/sms-otp-snatch/Sources/OTPTypedStream/include/OTPTypedStream.h"
-    export *
-}
