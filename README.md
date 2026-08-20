@@ -60,6 +60,15 @@ scripts/make-signing-identity.sh   # one-time, creates a stable signing identity
 `OTPSnatcher --check` prints a headless report of permission, decode and config
 state. Use it before debugging anything else.
 
+To read the app's own log, note that `log` is a **zsh builtin**, so the absolute
+path is required or the command silently does nothing:
+
+```bash
+/usr/bin/log show --last 5m --predicate 'subsystem == "com.pooya.otpsnatcher"' --style compact
+```
+
+The log carries row ids, counts and event names only, never message content.
+
 Full Disk Access attaches to the **bundle**, not to `.build/release/OTPSnatcher`.
 Testing DB access by running the raw binary tells you nothing useful, because a
 binary launched from a terminal inherits the terminal's permissions.

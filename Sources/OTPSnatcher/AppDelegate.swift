@@ -31,10 +31,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let watchQueue = DispatchQueue(label: "com.pooya.otpsnatcher.watch", qos: .utility)
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // One unconditional launch marker, so `log show --predicate
-        // 'subsystem == "com.pooya.otpsnatcher"'` always shows whether the app
-        // started and which permission state it saw. Without it, the denied
+        // One unconditional launch marker, so the log always shows whether the
+        // app started and which permission state it saw. Without it the denied
         // path is completely silent, which makes support impossible.
+        //
+        //   /usr/bin/log show --last 5m \
+        //     --predicate 'subsystem == "com.pooya.otpsnatcher"' --style compact
+        //
+        // The absolute path matters: `log` is a zsh builtin and shadows this.
         Log.event(.watcher, "launched")
         loadConfig(announce: false)
 
@@ -55,6 +59,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         watcher = DirectoryWatcher(
             directory: MessageStore.defaultDatabaseURL.deletingLastPathComponent(),
             queue: watchQueue,
+            tag: "messages",
             onPulse: { [weak self] in self?.engine.pulse() }
         )
 
@@ -71,6 +76,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             directory: (try? AppSupport.ensureDirectory()) ?? AppSupport.directory,
             debounce: 0.4,
             queue: watchQueue,
+            tag: "config",
             onPulse: { [weak self] in
                 Task { @MainActor in self?.loadConfig(announce: true) }
             }

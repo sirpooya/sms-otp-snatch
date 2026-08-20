@@ -18,6 +18,8 @@ final class DirectoryWatcher {
     private let debounce: TimeInterval
     private let queue: DispatchQueue
     private let onPulse: () -> Void
+    /// Which watcher this is, for the log. There is more than one instance.
+    private let tag: StaticString
 
     private var stream: FSEventStreamRef?
     private var pendingPulse: DispatchWorkItem?
@@ -25,7 +27,9 @@ final class DirectoryWatcher {
     init(directory: URL,
          debounce: TimeInterval = 0.15,
          queue: DispatchQueue,
+         tag: StaticString,
          onPulse: @escaping () -> Void) {
+        self.tag = tag
         self.directory = directory
         self.debounce = debounce
         self.queue = queue
@@ -84,7 +88,7 @@ final class DirectoryWatcher {
         }
 
         self.stream = stream
-        Log.event(.watcher, "fsevents-started")
+        Log.event(.watcher, "fsevents-started", tag: tag)
         return true
     }
 
@@ -96,7 +100,7 @@ final class DirectoryWatcher {
         FSEventStreamInvalidate(stream)
         FSEventStreamRelease(stream)
         self.stream = nil
-        Log.event(.watcher, "fsevents-stopped")
+        Log.event(.watcher, "fsevents-stopped", tag: tag)
     }
 
     /// Collapses a burst of filesystem events into one pulse. A single message

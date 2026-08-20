@@ -35,6 +35,13 @@ public enum Log {
         logger(for: area).log("\(name, privacy: .public)")
     }
 
+    /// A named event tagged with which instance emitted it. Two watchers of the
+    /// same class logging identical lines is genuinely confusing to read back,
+    /// so anything with more than one instance carries a tag.
+    public static func event(_ area: Area, _ name: StaticString, tag: StaticString) {
+        logger(for: area).log("\(name, privacy: .public) [\(tag, privacy: .public)]")
+    }
+
     /// A named event carrying a row identifier. ROWIDs are safe: they are
     /// monotonic counters, not content.
     public static func row(_ area: Area, _ name: StaticString, rowID: Int64) {
