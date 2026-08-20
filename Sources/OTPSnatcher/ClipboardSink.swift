@@ -58,13 +58,13 @@ final class ClipboardSink {
     func clearIfStillOurs() {
         defer { clearWork = nil }
         guard let written = lastWritten else { return }
-        guard pasteboard.changeCount == written.changeCount else {
-            Log.event(.clipboard, "clear-skipped-changed")
-            lastWritten = nil
-            return
-        }
-        guard pasteboard.string(forType: .string) == written.value else {
-            Log.event(.clipboard, "clear-skipped-value-differs")
+        guard ClipboardGuard.shouldClear(
+            currentChangeCount: pasteboard.changeCount,
+            writtenChangeCount: written.changeCount,
+            currentValue: pasteboard.string(forType: .string),
+            writtenValue: written.value
+        ) else {
+            Log.event(.clipboard, "clear-skipped-not-ours")
             lastWritten = nil
             return
         }
